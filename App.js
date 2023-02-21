@@ -13,7 +13,7 @@ import VideoScreen from './screens/VideoScreen';
 const Stack = createNativeStackNavigator();
 
 export const client = new ApolloClient({
-  uri: 'http://192.168.1.41:4000/',
+  uri: 'https://course-cube-server.onrender.com/',
   cache: new InMemoryCache(),
 });
 

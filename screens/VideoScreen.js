@@ -5,35 +5,67 @@ import React, {useCallback} from 'react';
 import tw from 'twrnc';
 
 const GET_VIDEOS = gql`
-  query Videos {
-    videos {
+  query Contents($filter: ContentsFilterInput) {
+    contents(filter: $filter) {
       payload {
         _id
+        categories
         createdAt
+        description
         enable
-        link
-        thumbnail
-        time
-        title
-        updatedAt
-        urls {
-          format
-          url
+        exams
+        highlight
+        image
+        index
+        likes
+        language
+        instructors
+        media {
+          ... on Test {
+            _id
+            createdAt
+            title
+            thumbnail
+            instructions
+            duration
+            totalMarks
+            negativeMark
+            enable
+            updatedAt
+          }
         }
+        offer
+        offerType
+        paid
+        price
+        purchased
+        purchases
+        subject
+        tags
+        title
+        type
+        updatedAt
+        validity
+        visible
       }
     }
   }
 `;
 function VideoScreen() {
-  const {loading, error, data} = useQuery(GET_VIDEOS);
-
+  const {loading, error, data} = useQuery(GET_VIDEOS, {
+    variables: {
+      filter: {
+        type: 'Video',
+      },
+    },
+  });
   const Item = useCallback(
     ({item}) => (
       <View style={tw`flex-row bg-white mb-3 mx-3 rounded-lg`}>
         <Image
           style={tw`w-44 rounded-lg h-24 	`}
           source={{
-            uri: item.thumbnail,
+            uri: item.image,
           }}
         />
         <View style={tw`flex-1 justify-around p-2`}>
@@ -55,7 +87,7 @@ function VideoScreen() {
     [],
   );
 
-  // console.log(data?.videos?.payload);
+  console.log(data?.contents?.payload);
 
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>Error : {error.message}</Text>;
@@ -63,7 +95,7 @@ function VideoScreen() {
     <View style={tw`flex-1`}>
       <Text>Videos Screen</Text>
       <FlatList
-        data={data?.videos?.payload}
+        data={data?.contents?.payload}
         renderItem={({item}) => <Item item={item} />}
         keyExtractor={item => item.id}
       />
