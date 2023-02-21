@@ -67,7 +67,7 @@ function TestScreen() {
   console.log(data?.contents?.payload);
   const Item = useCallback(
     ({item}) => (
-      <View style={tw.style(`bg-black rounded-lg`, {width: width / 2 - 8})}>
+      <View style={tw.style(`bg-white rounded-lg`, {width: width / 2 - 8})}>
         <Image
           style={tw`rounded-lg h-44`}
           source={{

@@ -4,11 +4,11 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
-import VideosScreen from './screens/VideoScreen';
 import TestScreen from './screens/TestScreen';
 import DocumentScreen from './screens/DocumentScreen';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 import VideoScreen from './screens/VideoScreen';
+import TabNavigator from './navigators/TabNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +22,11 @@ function App() {
     <ApolloProvider client={client}>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            options={{}}
+            name="Tab Navigator"
+            component={TabNavigator}
+          />
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Videos" component={VideoScreen} />
           <Stack.Screen name="Tests" component={TestScreen} />

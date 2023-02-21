@@ -69,7 +69,9 @@ function VideoScreen() {
           }}
         />
         <View style={tw`flex-1 justify-around p-2`}>
-          <Text style={tw`text-sm font-bold text-green-700`}>Geography</Text>
+          <Text style={tw`text-sm font-bold text-green-700`}>
+            {item.subject}
+          </Text>
           <Text
             numberOfLines={2}
             ellipsizeMode="tail"
