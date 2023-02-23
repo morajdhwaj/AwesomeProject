@@ -17,6 +17,13 @@ import DevSettingScreen from './screens/DevSettingScreen';
 import KeyBoardScreen from './screens/KeyBoardScreen';
 import LayoutAnimationScreen from './screens/LayoutAnimationScreen';
 import PanResponderScreen from './screens/PanResponderScreen';
+import PixelRatioScreen from './screens/PixelRatioScreen';
+import PlateFormScreen from './screens/PlatformScreen';
+import PlateformColorScreen from './screens/PlateformColorScreen';
+import ShareScreen from './screens/ShareScreen';
+import StyleSheetScreen from './screens/StyleSheetScreen';
+import TransformsScreen from './screens/TransFormsScreen';
+import VibrationScreen from './screens/VibrationScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -53,6 +60,16 @@ function App() {
             name="InteractionManager"
             component={InteractionManagerScreen}
           />
+          <Stack.Screen name="PixelRatio" component={PixelRatioScreen} />
+          <Stack.Screen name="Plateform" component={PlateFormScreen} />
+          <Stack.Screen
+            name="PlateformColor"
+            component={PlateformColorScreen}
+          />
+          <Stack.Screen name="Share" component={ShareScreen} />
+          <Stack.Screen name="StyleSheet" component={StyleSheetScreen} />
+          <Stack.Screen name="TransForm" component={TransformsScreen} />
+          <Stack.Screen name="Vibration" component={VibrationScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </ApolloProvider>
