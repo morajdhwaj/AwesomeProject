@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable curly */
 import React, {useCallback} from 'react';
 import {View, Text, Image, FlatList, Dimensions} from 'react-native';
