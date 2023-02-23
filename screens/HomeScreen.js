@@ -21,6 +21,10 @@ function HomeScreen() {
         title="Go to Documents"
         onPress={() => navigation.navigate('Documents')}
       />
+      <Button
+        title="Go to TabNavigator"
+        onPress={() => navigation.navigate('Tab Navigator')}
+      />
     </View>
   );
 }

@@ -21,13 +21,13 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{headerShown: true}}>
+          <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen
-            options={{}}
+            options={{headerShown: false}}
             name="Tab Navigator"
             component={TabNavigator}
           />
-          <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Videos" component={VideoScreen} />
           <Stack.Screen name="Tests" component={TestScreen} />
           <Stack.Screen name="Documents" component={DocumentScreen} />

@@ -78,7 +78,7 @@ function TestScreen() {
           style={tw.style(
             `flex-1 justify-between h-28 bg-gray-200 rounded-lg p-2`,
           )}>
-          <Text style={tw`text-[10px] text-red-700`}>Geography</Text>
+          <Text style={tw`text-[10px] text-red-700`}>{item.subject}</Text>
           <Text
             numberOfLines={1}
             ellipsizeMode="tail"
