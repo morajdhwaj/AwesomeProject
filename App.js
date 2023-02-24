@@ -24,6 +24,7 @@ import ShareScreen from './screens/ShareScreen';
 import StyleSheetScreen from './screens/StyleSheetScreen';
 import TransformsScreen from './screens/TransFormsScreen';
 import VibrationScreen from './screens/VibrationScreen';
+import Toast from './screens/MyToast';
 
 const Stack = createNativeStackNavigator();
 
@@ -70,6 +71,7 @@ function App() {
           <Stack.Screen name="StyleSheet" component={StyleSheetScreen} />
           <Stack.Screen name="TransForm" component={TransformsScreen} />
           <Stack.Screen name="Vibration" component={VibrationScreen} />
+          <Stack.Screen name="Toast" component={Toast} />
         </Stack.Navigator>
       </NavigationContainer>
     </ApolloProvider>

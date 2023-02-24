@@ -85,6 +85,10 @@ function HomeScreen() {
         title="Go to Vibration "
         onPress={() => navigation.navigate('Vibration')}
       />
+      <Button
+        title="Go to Toast "
+        onPress={() => navigation.navigate('Toast')}
+      />
     </ScrollView>
   );
 }
